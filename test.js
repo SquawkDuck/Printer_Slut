@@ -1,10 +1,10 @@
-const frasi = ["Dario", "saro'", "la troia", "informatica", "della ditta"];
-let index = 0;
+{ // ora non inquino piu' :)
+  const frasi = ["Dario", "saro'", "la troia", "informatica", "della ditta"];
+  let index = 0;
 
-if (index < frasi.length) {
-  output = frasi[index];
-  document.getElementById("screen_message").textContent = output;
-  index++;
-} else {
-  index = 0; // Reset index to 0
+  setInterval(function () {
+
+    document.getElementById("screen_message").textContent = frasi[index];
+    index = (index + 1) % frasi.length; // Visto come ho usato l'operatore modulo invece di if-else ? 
+  }, 800);
 }
