@@ -1,10 +1,11 @@
-function Main() {
+function generateStupidMessage() {
   let index = 0;
   const frasi = ["Dario", "saro'", "la troia", "informatica", "della ditta"];
-  function cylingMessage() {
+  function cycleMessage() {
     document.getElementById("screen_message").textContent = frasi[index];
     index = (index + 1) % frasi.length;
-  }
-  setInterval(cylingMessage, 800);
+  };
+  cycleMessage();
+  setInterval(cycleMessage, 800);
 }
-Main();
+generateStupidMessage();
