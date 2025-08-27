@@ -3,15 +3,27 @@ function generateStupidMessage() {
   const ButtonMessage = "Stop if you had enought !"
   document.getElementById("button_message").textContent = ButtonMessage;
   let index = 0;
-  const frasi = ["Dario", "saro'", "la troia", "informatica", "della ditta"];
+
+  async function getJokes() {
+  try {
+    const response = await fetch('jokes.txt');
+    const text = await response.text();
+    const jokes = text.split('\n');
+    return jokes;
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+
   let paused = false;
-  function cycleMessage() {
-    if (!paused) {
-      document.getElementById("screen_message").textContent = frasi[index];
-      index = (index + 1) % frasi.length;
+  async function cycleMessage() {
+   if (!paused) {
+     const jokes = await getJokes();
+      document.getElementById("screen_message").textContent = jokes[index];
+      index = (index + 1) % jokes.length;
     }
   }
-  const intervalLenght = 800;
+  const intervalLenght = 3500;
   cycleMessage();
   let intervalId = setInterval(cycleMessage, intervalLenght);
   stopStartInterval = function () {
