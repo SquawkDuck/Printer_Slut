@@ -1,4 +1,5 @@
 function generateStupidMessage() {
+  document.getElementById("button_message").style.backgroundColor = "red";
   const ButtonMessage = "Stop if you had enought !"
   document.getElementById("button_message").textContent = ButtonMessage;
   let index = 0;
@@ -17,9 +18,11 @@ function generateStupidMessage() {
     if (paused) {
       clearInterval(intervalId);
       document.getElementById("button_message").textContent = ButtonMessage;
+      document.getElementById("button_message").style.backgroundColor = "red";
     } else {
       intervalId = setInterval(cycleMessage, intervalLenght);
       document.getElementById("button_message").textContent = "Keep going, I actually like it !";
+      document.getElementById("button_message").style.backgroundColor = "green";
     }
     paused = !paused;
   };
