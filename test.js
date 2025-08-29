@@ -24,5 +24,6 @@ function main() {
     screenMessage.textContent = frasi[index];
     index = (index + 1) % frasi.length;
   }
+  cycleMessage();
 }
 main();
