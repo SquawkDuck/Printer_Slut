@@ -2,8 +2,8 @@ function main() {
   let index = 0;
   const frasi = ["Dario", "saro'", "la troia", "informatica", "della ditta"];
   const screenMessage = document.getElementById("screen_message");
-  const buttonMesage = document.getElementById("button_message");
-  console.log(buttonMesage);
+  const buttonMessage = document.getElementById("button_message");
+  buttonMessage.textContent = "pause";
   let paused = false;
   const intervalLenght = 800;
   let interval = setInterval(cycleMessage, intervalLenght);
@@ -19,7 +19,7 @@ function main() {
       console.log("unpaused");
     }
   }
-  buttonMesage.addEventListener("click", pauseUnpause);
+  buttonMessage.addEventListener("click", pauseUnpause);
   function cycleMessage() {
     screenMessage.textContent = frasi[index];
     index = (index + 1) % frasi.length;
