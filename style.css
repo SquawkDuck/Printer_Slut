@@ -12,7 +12,7 @@
 
 .header {
   margin-bottom: 2vh; 
-  font-size: 3vw;
+  font-size: 6vw;
 }
 
 .button {
@@ -25,7 +25,7 @@
   background-color: #4caf50;
   color: #fff;
   cursor: pointer;
-  font-size: 2vw;
+  font-size: 4vw;
   white-space: nowrap;
   min-width: 0;
 }
